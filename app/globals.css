@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: white;
+}
+
+.btn {
+  padding: 10px 15px;
+  margin: 10px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, red, blue);
+}
+
+.input {
+  padding: 10px 25px;
+  margin: 10px;
+  border-radius: 10px;
+  color: black;
+}
