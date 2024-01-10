@@ -5,6 +5,7 @@ import { createUser, deleteUser } from '@/lib/actions/user'
 
 export async function POST(req) {
 
+
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET
 
@@ -55,7 +56,7 @@ export async function POST(req) {
 
     try {
       await createUser(id, image_url, email_addresses, username);
-      return new Response('', { status: 200 })
+      return new Response('Create User', { status: 200 })
 
     } catch (err) {
       console.error("Error creating or updating user:", err);
