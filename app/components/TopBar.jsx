@@ -26,7 +26,7 @@ const TopBar = () => {
         <SignedIn>
           <SignOutButton>
             <div className='flex items-center m-3 '>
-              <FaSignOutAlt size={25} className=' text-red-700' />
+              <FaSignOutAlt size={25} className=' text-red-700 cursor-pointer' />
 
             </div>
           </SignOutButton>

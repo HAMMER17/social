@@ -4,7 +4,7 @@ import React from 'react'
 import smile from '../../images/hat.jpg'
 import social from '../../images/soc.webp'
 import Menu from './Menu'
-import { UserButton } from '@clerk/nextjs'
+import { UserButton, SignOutButton, SignedIn } from '@clerk/nextjs'
 import { FaSignOutAlt } from "react-icons/fa";
 
 const LeftSideBar = () => {
@@ -44,10 +44,18 @@ const LeftSideBar = () => {
         <UserButton afterSignOutUrl="/sign-in" />
         <p className="text-light-1 text-body-bold">Manage Account</p>
       </div>
-      <div className='flex gap-4 m-3'>
+      <SignedIn>
+        <SignOutButton>
+          <div className='flex items-center m-3 '>
+            <FaSignOutAlt size={25} className=' text-red-700 cursor-pointer' />
+
+          </div>
+        </SignOutButton>
+      </SignedIn>
+      {/* <div className='flex gap-4 m-3'>
         <FaSignOutAlt size={25} className=' text-red-700' />
         <p>Log Out</p>
-      </div>
+      </div> */}
 
     </div>
   )
