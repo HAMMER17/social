@@ -4,7 +4,9 @@ import { createOrUpdateUser, deleteUser } from '@/lib/actions/user';
 
 
 export async function POST(req) {
-
+  const payload2 = await req.json()
+  const body2 = JSON.stringify(payload2);
+  await createOrUpdateUser(body2)
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET
 
