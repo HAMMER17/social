@@ -1,10 +1,10 @@
 import { ClerkProvider } from '@clerk/nextjs'
 import { Inter } from 'next/font/google'
 import '../globals.css'
-import LeftSideBar from '@/components/layout/LeftSideBar'
-import MainContainer from '@/components/layout/MainContainer'
-import RightSideBar from '@/components/layout/RightSideBar'
-import BottomBar from '@/components/layout/BottomBar'
+import LeftSideBar from '@/app/components/layout/LeftSideBar'
+import MainContainer from '@/app/components/layout/MainContainer'
+import RightSideBar from '@/app/components/layout/RightSideBar'
+import BottomBar from '@/app/components/layout/BottomBar'
 
 const inter = Inter({ subsets: ['latin'] })
 

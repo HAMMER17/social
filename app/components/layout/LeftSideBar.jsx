@@ -1,12 +1,15 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import Menu from './Menu'
-import { UserButton } from '@clerk/nextjs'
+import { UserButton, useUser } from '@clerk/nextjs'
 import hat from '@/images/hat.jpg'
 import { dark } from "@clerk/themes";
 
 const LeftSideBar = () => {
+  const { user } = useUser()
+
   return (
     <div className="h-screen left-0 top-0 sticky overflow-auto px-10 py-6 flex flex-col gap-6 max-md:hidden 2xl:w-[350px] pr-20 custom-scrollbar bg-black">
       <Link href="/">
@@ -19,8 +22,8 @@ const LeftSideBar = () => {
             <Image
               src={hat}
               alt="profile photo"
-              width={50}
-              height={50}
+              width={60}
+              height={60}
               className="rounded-full"
             />
           </Link>

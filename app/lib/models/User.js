@@ -6,14 +6,6 @@ const UserSchema = new mongoose.Schema({
     required: true,
     uinque: true,
   },
-  firstName: {
-    type: String,
-    required: true,
-  },
-  lastName: {
-    type: String,
-    required: true,
-  },
   username: {
     type: String,
     required: true,
@@ -22,9 +14,13 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  profilePhoto: {
+  password: {
     type: String,
     required: true,
+  },
+  profilePhoto: {
+    type: String,
+    // required: true,
   },
   posts: {
     type: [{ type: mongoose.Schema.Types.ObjectId, ref: "Post" }],

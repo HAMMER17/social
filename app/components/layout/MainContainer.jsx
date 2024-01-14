@@ -1,5 +1,5 @@
 'use client'
-import { pageTitles } from "@/constants";
+import { pageTitles } from "@/app/constants";
 import { usePathname } from "next/navigation";
 import TopBar from './TopBar'
 
