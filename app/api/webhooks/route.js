@@ -1,6 +1,6 @@
 import { Webhook } from 'svix'
 import { headers } from 'next/headers'
-import { createOrUpdateUser, deleteUser } from '@/app/lib/actions/user';
+import { createOrUpdateUser, deleteUser } from '@/lib/actions/user';
 
 
 
@@ -43,17 +43,15 @@ export async function POST(req) {
   const eventType = evt?.type;
 
   if (eventType === "user.created" || eventType === "user.updated") {
-    const { id, first_name, last_name, image_url, email_addresses, username } =
+    const { id, image_url, email_addresses, username } =
       evt?.data;
 
     try {
       await createOrUpdateUser(
         id,
-        first_name,
-        last_name,
         image_url,
         email_addresses,
-        username
+        username,
       );
 
       return new Response("User is created or updated", {

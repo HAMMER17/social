@@ -7,7 +7,7 @@ import { SignOutButton, SignedIn, UserButton, useUser } from "@clerk/nextjs";
 import Link from "next/link";
 import Image from "next/image";
 import { dark } from "@clerk/themes";
-import Loader from "./Loader";
+import Loader from "../form/Loader";
 
 const TopBar = () => {
   const { user, isLoaded } = useUser();
