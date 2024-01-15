@@ -1,5 +1,6 @@
+import Post from "@/lib/models/Post"
 import { connectToDB } from "@/lib/mongodb/mongoose"
-import Post from "@lib/models/Post"
+
 
 
 export const GET = async (req) => {
