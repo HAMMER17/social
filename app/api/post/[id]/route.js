@@ -1,7 +1,5 @@
 import Post from "@/lib/models/Post";
 import { connectToDB } from "@/lib/mongodb/mongoose";
-
-
 import { writeFile } from "fs/promises";
 
 export const GET = async (req, { params }) => {
@@ -11,7 +9,7 @@ export const GET = async (req, { params }) => {
     const post = await Post.findById(params.id)
       .populate("creator likes")
       .exec();
-
+    console.log(post, "route")
     return new Response(JSON.stringify(post), { status: 200 });
   } catch (err) {
     console.error(err);
@@ -40,9 +38,7 @@ export const POST = async (req, { params }) => {
         "uploads",
         postPhoto.name
       );
-
       await writeFile(postPhotoPath, buffer);
-
       postPhoto = `/uploads/${postPhoto.name}`;
     }
 
