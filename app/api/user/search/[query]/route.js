@@ -1,6 +1,7 @@
 
 import User from "@/lib/models/User";
-import { connectToDB } from "@lib/mongodb/mongoose";
+import { connectToDB } from "@/lib/mongodb/mongoose";
+
 
 export const GET = async (req, { params }) => {
   const { query } = params;
